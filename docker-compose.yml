@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  etl:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      WAREHOUSE_BACKEND: sqlite
+      WAREHOUSE_PATH: /app/data/warehouse.db
+    volumes:
+      - ./data:/app/data
